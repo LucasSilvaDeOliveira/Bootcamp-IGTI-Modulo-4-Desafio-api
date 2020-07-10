@@ -26,6 +26,16 @@ export default (mongoose) => {
     },
   });
 
+  schema.method('transform', function () {
+    var obj = this.toObject();
+
+    //Rename fields
+    obj.id = obj._id;
+    delete obj._id;
+
+    return obj;
+  });
+
   const gradesModel = mongoose.model('grades', schema, 'grades');
 
   return gradesModel;
