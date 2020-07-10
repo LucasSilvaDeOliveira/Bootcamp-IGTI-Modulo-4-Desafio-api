@@ -66,7 +66,7 @@ const update = async (req, res) => {
   const id = req.params.id;
 
   try {
-    const data = await Grade.findByIdAndUpdate({ _id: id }, req.body);
+    const data = await Grade.findByIdAndUpdate({ id: id }, req.body);
     if (!data) {
       res.send({ message: 'Grade não encontrado' });
     }
@@ -83,7 +83,7 @@ const remove = async (req, res) => {
   const id = req.params.id;
 
   try {
-    const data = await Grade.findByIdAndRemove({ _id: id });
+    const data = await Grade.findByIdAndRemove({ id: id });
     if (data) {
       res.send({ message: 'Grade excluido com sucesso' });
     }
