@@ -28,7 +28,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(
   cors({
-    origin: 'https://desafio-modulo-4-api.herokuapp.com',
+    origin: 'https://desafio-modulo-4-frontend.herokuapp.com',
   })
 );
 
